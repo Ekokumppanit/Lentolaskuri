@@ -1,0 +1,141 @@
+@import 'bootstrap/less/bootstrap';
+@import 'font-awesome/build/assets/font-awesome/less/font-awesome';
+@import (less) 'select2/select2.css';
+
+.calculator {
+  .inactive {
+    opacity: 0.5;
+  }
+  .nav-tabs {
+    a {
+      font-size: 21px;
+    }
+  }
+}
+
+.select2-container {
+  display: block;
+  .select2-choice {
+    display: none;
+  }
+}
+
+.select2-result {
+  abbr {
+    display: block;
+    width: 3em;
+    float: left;
+    color: #1657A1;
+  }
+}
+
+.select2-drop {
+  border-top: 1px solid #aaa;
+  .select2-search input {
+    margin-top: 4px;
+  }
+  &.select2-drop-above {
+    border-bottom: 1px solid #aaa;
+  }
+}
+
+.leg {
+  text-align: left;
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 40px 10px 0;
+  margin: 0 0;
+  & > div {
+    & > div {
+      padding-left: 24px;
+    }
+  }
+  i.icon-sort, .delete {
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    float: right;
+  }
+  i.icon-sort {
+    left: 0;
+  }
+  .delete {
+    right: 0;
+    margin-top: -15px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin: 0;
+    line-height: 22px;
+  }
+  abbr {
+    float: right;
+    font-weight: normal;
+  }
+  i {
+    margin-top: -7px;
+  }
+}
+
+.route {
+  position: relative;
+  .leg {
+    position: relative;
+    left: 0 !important;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.roundtripWidget {
+  .btn-group {
+    width: 100%;
+  }
+  button {
+    width: 50%;
+  }
+}
+
+.resultsWidget {
+  position: relative;
+}
+
+.legInputWidget {
+  .btn {
+    text-align: left;
+    span {
+      padding-left: 12px;
+    }
+  }
+}
+
+.totalWidget {
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+  border-top: 1px solid #e5e5e5;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+  .distance {
+    display: block;
+  }
+  .raw {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .co2 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+
+input[type=number] {
+  text-align: right;
+}
+
+.map {
+  height: 300px;
+}

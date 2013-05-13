@@ -1,0 +1,15 @@
+<p class="distance">Matkaa yhteensä {{displayFloat dist 1}} <em>km</em>.</p>
+
+<p class="raw">{{#if alone}}
+  {{#if roundtrip}}
+    Päästöjä per suunta {{displayFloat rawTotal 0}} <em>Kg CO<sub>2</sub></em>.
+  {{/if}}
+{{else}}
+  {{#if roundtrip}}
+    Päästöjä per henkilö per suunta {{displayFloat rawTotal 0}} <em>Kg CO²</em>.
+  {{else}}
+    Päästöjä per henkilö {{displayFloat rawTotal 0}} <em>Kg CO<sub>2</sub></em>.
+  {{/if}}
+{{/if}}</p>
+<p class="co2">{{displayFloat total 0}} <em>kg CO<sub>2</sub></em></p>
+<p class="price">{{displayFloat price 2}} <em>€</em></p>

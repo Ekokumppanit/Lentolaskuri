@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/juho/Source/tyo/lentolaskuri2",
+			"folder_exclude_patterns": ["node_modules", ".cache", ".tmp", "app/components"]
+		}
+	],
+	"ternjs": {
+		"exclude": ["node_modules/**", "app/components/**"],
+		"libs": ["jquery"],
+		"plugins": {
+			"requirejs": {
+				"baseURL": "app/components"
+			}
+		}
+	}
+}

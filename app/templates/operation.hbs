@@ -1,0 +1,58 @@
+<p>
+  Laskuri noutaa tietokannasta, jonka lähteenä on <a href="http://openflights.org/">http://openflights.org/</a>, lentokenttien sijainnit.
+  Etäisyys kahden koordinaatin välillä lasketaan <a href="http://en.wikipedia.org/wiki/Haversine_formula">Haversinen kaavalla</a>.
+</p>
+
+<p>
+  Lähtö- ja kohdekentälle valitaan lentoalue niiden <abbr title="International Civil Aviation Organization">ICAO</abbr>-tunnusten perusteella.
+  Mikäli toinen kenttä on esimerkiksi Suomessa ja toinen Pohjois-Euroopassa, valitaan muuttujat jälkimmäisen mukaan.
+</p>
+
+<ul>
+  <li><strong>Säteilypakotekerroin</strong> <strong>1,0</strong> tai matkan ollessa yli 500km <strong>2,0</strong>.</li>
+  <li><strong>Epäsuoramatkakerroin</strong> – koska reitit eivät kulje suorinta mahdollista reittiä, kerrotaan matka kertoimella <strong>{{displayFloat indirectRouteMultiplier 2}}</strong>.
+  <li><strong>CO<sub>2</sub> päästötonnin hinta</strong> {{displayFloat priceCO2 2}}€</li>
+</ul>
+
+<p>
+  Muuttujista rakennetaan kerroin <em>m</em> seuraavasti <em>säteilypakotekerroin * (1 - rahtikerroin) * (1 / kuormakerroin)</em>.
+  Lopulliset co<sub>2</sub> päästöt koostuvat kahdesta osasta: laskeutuminen ja nousu sekä lento. Lennon
+  päästöt lasketaan kertomalla kuljettu etäisyys kertoimilla <em>m</em> ja <em>co2</em>. Laskeutumisen ja nousut päästöt saadaan kertomalla <em>lto</em>-muuttuja kertoimella <em>m</em>.
+</p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td colspan="2"><strong>Etäisyys [km]</strong></i></td>
+      {{#each distanceRanges}}
+      <td><strong>{{name}}</strong></td>
+      {{/each}}
+    </tr>
+    <tr>
+      <td><strong>Lentoalue</strong></td>
+      <td><strong>Muuttuja</strong></td>
+      <td colspan="5"></td>
+    </tr>
+  </thead>
+
+  {{#each parameters}}
+  <tr>
+    <td rowspan="4">{{name}}</td>
+    <td>co<sub>2</sub></td>
+    {{#each co2factor}}<td>{{displayFloat this 2}}</td>{{/each}}
+  </tr>
+  <tr>
+    <td>lto</td>
+    {{#each ltoCycle}}<td>{{this}}</td>{{/each}}
+  </tr>
+  <tr>
+    <td><abbr title="Paljonko lennoilla on matkustajia.">kuorma</abbr></td>
+    {{#each load}}<td>{{displayFloat this 2}}</td>{{/each}}
+  </tr>
+  <tr>
+    <td><abbr title="Paljonko koneet ottavat rahtia.">rahti</abbr></td>
+    {{#each freight}}<td>{{displayFloat this 2}}</td>{{/each}}
+  </tr>
+  {{/each}}
+
+</table>
