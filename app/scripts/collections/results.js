@@ -10,11 +10,11 @@ define([
     initialize: function (model, opts) {
       this.route = opts.route;
 
+      this.total = new Total();
+
       this.route.on('add', this.newLeg, this);
       this.route.on('remove', this.calculate, this);
       this.route.on('sort', this.calculate, this);
-
-      this.total = new Total();
     },
     newLeg: function (model, collection, options) {
       if (this.route.length < 2) {

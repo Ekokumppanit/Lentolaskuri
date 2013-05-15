@@ -3,3 +3,4 @@ dist
 .tmp
 app/components
 *.sublime-workspace
+app/api/config.php

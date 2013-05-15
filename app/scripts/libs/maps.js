@@ -27,20 +27,20 @@ define([
     var num = i;
     deferred.done(function () {
       maps[num] = new gmaps.Map(el, {
-          center: glatlng([0, 0]),
-          mapTypeId: gmaps.MapTypeId.ROADMAP,
-          zoom: 0,
-          streetViewControl: false,
-          mapTypeControl: false,
-          draggable: false,
-          scrollwheel: false,
-          zoomControl: false
+        center: glatlng([0, 0]),
+        mapTypeId: gmaps.MapTypeId.ROADMAP,
+        zoom: 0,
+        streetViewControl: false,
+        mapTypeControl: false,
+        draggable: false,
+        scrollwheel: false,
+        zoomControl: false
       });
     });
 
     return {
       id: i++
-    }
+    };
   };
 
   var Line = function (attr) {
