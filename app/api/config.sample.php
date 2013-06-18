@@ -1,12 +1,16 @@
 <?php
-
-
-
+/**
+ * Database configuration
+ *
+ * Configure these and open the project in your browser,
+ * install script takes care of the rest.
+ */
 $config = array(
-	'server' => 'localhost',
-	'db' => 'lentolaskuri2',
-	'user' => 'lentolaskuri2',
-	'password' => '8@89z~UIwavn',
+	'server'   => 'localhost',
+	'db'       => 'database',
+	'user'     => 'username',
+	'password' => 'password',
+    'table'    => 'airports'
 );
 
 // ----
