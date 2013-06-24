@@ -54,6 +54,6 @@ require([
   'bootstrap',
   'libs/handlebar_helpers'
 ], function ($, App) {
-  $("html:first").removeClass("no-js").addClass('js'); // JavaScript detection
+  $('html:first').removeClass('no-js').addClass('js'); // JavaScript detection
   var app = new App();
 });
