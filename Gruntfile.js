@@ -218,7 +218,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>/font',
           src: [
-            'components/font-awesome/build/assets/font-awesome/font/*.{ttf,woff,otf,eot,svg}'
+            'components/font-awesome/font/*.{ttf,woff,otf,eot,svg}'
           ]
         }, {
           expand: true,
@@ -237,7 +237,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '.tmp/font',
           src: [
-            'components/font-awesome/build/assets/font-awesome/font/*.{ttf,woff,otf,eot,svg}'
+            'components/font-awesome/font/*.{ttf,woff,otf,eot,svg}'
           ]
         }, {
           expand: true,
@@ -314,7 +314,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'build'
   ]);
 };

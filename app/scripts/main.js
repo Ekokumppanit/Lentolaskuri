@@ -11,7 +11,7 @@ require.config({
     bootstrap: '../scripts/bootstrap',
     select2: '../components/select2/select2',
     lodash: '../components/lodash/lodash',
-    handlebars: '../components/handlebars/handlebars.runtime',
+    handlebars: 'handlebars.runtime',
     Template: '../scripts/templates',
     'jquery-ui-core': '../components/jquery-ui/ui/jquery.ui.core',
     'jquery-ui-mouse': '../components/jquery-ui/ui/jquery.ui.mouse',
@@ -41,9 +41,6 @@ require.config({
     'jquery-ui-sortable': {
       deps: ['jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse'],
       exports: 'jquery'
-    },
-    handlebars: {
-      exports: 'Handlebars'
     }
   }
 });

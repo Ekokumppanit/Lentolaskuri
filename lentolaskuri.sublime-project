@@ -2,8 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/home/juho/Source/tyo/lentolaskuri2",
-			"folder_exclude_patterns": ["node_modules", ".cache", ".tmp", "app/components"]
+			"path": ".",
+			"folder_exclude_patterns": ["node_modules", ".cache", ".tmp"]
 		}
 	],
 	"ternjs": {
