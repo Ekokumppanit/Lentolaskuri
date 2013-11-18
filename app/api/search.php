@@ -5,12 +5,14 @@ require_once('config.php');
 header("Access-Control-Allow-Origin: *");
 
 $search = $mysqli->real_escape_string($_GET['s']);
-$id = $mysqli->real_escape_string($_GET['i']);
+$id     = $mysqli->real_escape_string($_GET['i']);
+
 if (empty($search) && empty($id)) {
 	exit();
 }
 
 $query = "";
+
 if (!empty($search)) {
   $query = "
   SELECT *,
