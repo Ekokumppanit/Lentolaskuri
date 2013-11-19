@@ -31,6 +31,19 @@ grunt server   # Start development server
 grunt          # Build minified and optimized version for release to /dist -folder
 ```
 
+### Configuration ###
+
+1. Configure database access in ``app/api/config.sample.php`` and save as ``app/api/config.php``. The ``config.php`` file gets ignored in ``.gitignore`` so no worries.
+2. Build project using ``grunt``, this generates ``dist`` folder
+3. Push files and folders in ``dist/*`` to your server, for example as **http://example.com/lentolaskuri**
+4. Set up MySQL database table to your server and import airport data to your database:
+    - Visit **http://example.com/lentolaskuri/api/import.php** to create mysql table automagically (or import ``app/api/lentolaskuri.sql`` by hand, but change table name to one you used in ``config.php``)
+    - Change variable ``$config['create_table']`` to ``false`` in ``app/api/config.php`` to prevent further table creation attempts
+    - ProTip: You can make ``cron`` or similar visit this url weekly to update the latest airport data from openflights database
+6. Test your lentolaskuri application
+7. Donate money based on emissions to a good cause
+
+
 ## Credits ##
 
 - Build by [Juho Teperi](https://github.com/Deraen) in 2013 while working for [Ekokumppanit Oy](http://www.ekokumppanit.fi)

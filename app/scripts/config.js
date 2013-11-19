@@ -1,8 +1,10 @@
 'use strict';
 
+var searchlocation = window.location;
+
 define(function () {
   return {
-    api: 'http://work.lentolaskuri.fi/api',
+    api: searchlocation + 'api',
     R: 6371,
     radiativeForceFactor: function (dist) {
       return (dist >= 500) ? 2.0 : 1.0;

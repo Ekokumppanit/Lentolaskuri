@@ -48,9 +48,10 @@ require.config({
 require([
   'jquery',
   'app',
+  'config',
   'bootstrap',
   'libs/handlebar_helpers'
-], function ($, App) {
+], function ($, App, config) {
   $('html:first').removeClass('no-js').addClass('js'); // JavaScript detection
   var app = new App();
 });

@@ -5,7 +5,7 @@ define([
   'config'
 ], function ($, _, config) {
   var airportById = function (element, callback) {
-    $.get('http://localhost:8000/search.php?i=' + element.val(), null, function (data) {
+    $.get( config.api + '/search.php?i=' + element.val(), null, function (data) {
       callback(data[0]);
     });
   };
