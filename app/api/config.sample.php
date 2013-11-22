@@ -17,7 +17,8 @@ $config = array(
     'user'         => 'username',
     'password'     => 'password',
     'table'        => 'airports',
-    'create_table' => true
+    'create_table' => true,
+    'refresh_key'  => 'lentolaskuridatabasekey' // You should change this to your reset key
 );
 
 // ----

@@ -18,6 +18,18 @@ if (is_readable('config.php')) {
     die("Couldn't find configuration file. Please check the installation guide.");
 }
 
+
+/**
+ * Test if import.php?key= value matches $config['refresh_key']
+ * If matches continue, else stop processing with error message.
+ */
+
+$key = (empty($_GET['key'])) ? null : $_GET['key'];
+if ($config['refresh_key'] !== $key || empty($key)) {
+    $mysqli->close();
+    die("Wrong refresh_key, please check configuration file for the corrent key.");
+}
+
 /**
  * If we can see lentolaskuri.sql and config.php setting
  * $config['create_table'] is true, we try to create table for airports.
