@@ -9,7 +9,14 @@
  * @link     https://github.com/Ekokumppanit/Lentolaskuri
  */
 
-require_once 'config.php';
+/**
+ * See if we have config.php
+ */
+if (is_readable('config.php')) {
+    include_once 'config.php';
+} else {
+    die("Couldn't find configuration file. Please check the installation guide.");
+}
 
 // If we can see lentolaskuri.sql and config.php setting
 // $config['create_table'] is true, we try to create table for airports.
