@@ -18,8 +18,10 @@ if (is_readable('config.php')) {
     die("Couldn't find configuration file. Please check the installation guide.");
 }
 
-// If we can see lentolaskuri.sql and config.php setting
-// $config['create_table'] is true, we try to create table for airports.
+/**
+ * If we can see lentolaskuri.sql and config.php setting
+ * $config['create_table'] is true, we try to create table for airports.
+ */
 if (is_readable('lentolaskuri.sql') && $config['create_table']) {
     $create_table = file_get_contents('lentolaskuri.sql');
     if (! empty($create_table)) {
